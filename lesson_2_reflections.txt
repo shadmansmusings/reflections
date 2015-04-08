@@ -1,0 +1,13 @@
+What happens when you initialize a repository? Why do you need to do it?
+
+When you initialize a repo, you create an .git directory to contain all of the
+metadata needed to keep track of the changes made to the files and the versions
+they are associated with. You need to do the init to create an empty git repo
+to be able to commit changes to it.
+
+
+How is the staging area different from the working directory and the repository?
+What value do you think it offers?
+
+You things into the staging area before a commit. The working directory contains
+the files for the project.
