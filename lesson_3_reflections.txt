@@ -20,7 +20,7 @@ origin	https://github.com/shadmansmusings/reflections.git (push)
 
 stevenhadfield (master *) reflections $ git push origin master
 Username for 'https://github.com': shadmansmusings
-Password for 'https://shadmansmusings@github.com': 
+Password for 'https://shadmansmusings@github.com':
 Counting objects: 6, done.
 Delta compression using up to 4 threads.
 Compressing objects: 100% (6/6), done.
@@ -31,4 +31,23 @@ To https://github.com/shadmansmusings/reflections.git
 
 SO - this requested my username and PW and pushed the repo up to github.
 
-When would you want to use a remote repository rather than keeping all your work local?
+stevenhadfield (master *) reflections $ ls
+lesson_1_reflections.txt lesson_2_reflections.txt lesson_3_reflections.txt
+stevenhadfield (master *) reflections $ rm lesson_3_reflections.txt
+stevenhadfield (master *) reflections $ git pull origin master
+From https://github.com/shadmansmusings/reflections
+ * branch            master     -> FETCH_HEAD
+Updating d569663..dba22cb
+Fast-forward
+ lesson_3_reflections.txt | 34 ++++++++++++++++++++++++++++++++++
+ 1 file changed, 34 insertions(+)
+ create mode 100644 lesson_3_reflections.txt
+
+SO - lesson_3_reflections.txt pulled down
+NOTE - I had created the file, but pull failed because the file existed and git
+didn't want to overwrite it. I deleted the file, redid the pull - and all was
+good.
+
+
+When would you want to use a remote repository rather than keeping all your work
+local?

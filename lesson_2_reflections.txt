@@ -9,5 +9,62 @@ to be able to commit changes to it.
 How is the staging area different from the working directory and the repository?
 What value do you think it offers?
 
-You things into the staging area before a commit. The working directory contains
-the files for the project.
+The working dir is where all of your project file reside, changed or unchanged.
+The staging area is where you "add" the files you want to commit to the repo.
+The value is in separating the two and being able to control when changes get
+committed to the repo. Only "added" changes to the staging are will be committed
+by a git commit command.
+
+
+How can you use the staging area to make sure you have one commit per logical
+change?
+
+Easy, only add (git add filename) the changed files from your working dir that
+you want in that logical change segment.
+
+
+What are some situations when branches would be helpful in keeping your history
+organized? How would branches help?
+
+if you want to experiment, because it prevents you from affecting the master
+branch.
+
+To create a textual diagram of the master and specific branch(es), run this:
+git log --graph --oneline master <branch_name>
+
+To create a branch for an unreachable commit (something other than the head of
+master or head of a branch), run this:
+
+git checkout -b <new_branch_name>
+or
+git branch <new_branch_name>
+git checkout <new_branch_name>
+
+
+How do the diagrams help you visualize the branch structure?
+
+Allows you to better visualize how the repo and its branches are laid out. Can
+help you see what and where to merge.
+
+to to see all of the branches:
+git branch
+
+to merge coins into master:
+git merge master coins
+
+If you get a conflict on the merge, you will have to correct the conflict BEFORE
+the merge. So run this to abort the merge:
+
+git merge --abort
+
+to display only the latest commit, do this:
+git log -n 1
+
+
+What are the pros and cons of Git’s automatic merging vs. always doing merges
+manually?
+
+If git can do auto merging, then that is that much less for the user to do to
+determine what needs to go where. takes the time needed to complete out the
+equation. The con is on a conflict, there is a manual merge process that might
+be more difficult that one might expect.
