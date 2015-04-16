@@ -48,6 +48,34 @@ NOTE - I had created the file, but pull failed because the file existed and git
 didn't want to overwrite it. I deleted the file, redid the pull - and all was
 good.
 
+So the sequence is:
+#changes, save.
+# to see what changed:
+git status
+
+# to stage the changes:
+git add <fname> [<fname>, etc]
+
+# verify they are staged:
+git status
+
+# commit with message:
+git commit -m "some message here"
+
+# push changes to github:
+git push origin master
+
 
 When would you want to use a remote repository rather than keeping all your work
 local?
+
+When you want to backup your work so as not to lose anything. Also, once you
+might be done with a working session / day / whatever. You never want to forget
+where you are, or take the chance of losing or overwriting changes.
+
+
+Why might you want to always pull changes manually rather than having Git
+automatically stay up-to-date with your remote repository?
+
+Some sort of auto pull could possibly overwrite local changes. Manually pulling
+lets you control the changes in your local repo.
