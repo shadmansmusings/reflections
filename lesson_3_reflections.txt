@@ -79,3 +79,64 @@ automatically stay up-to-date with your remote repository?
 
 Some sort of auto pull could possibly overwrite local changes. Manually pulling
 lets you control the changes in your local repo.
+
+
+Add a recipe and put to the master branch.
+$ git add soup-recipe.txt
+$ git commit -m "adding a soup recipe"
+$ git push origin master
+
+
+Describe the differences between forks, clones, and branches. When would you use
+one instead of another?
+
+1. forking gives you a project as it exists from the place you got it from. That
+   project doesn't change, only your fork changes.
+2. cloning give you a local which can be pushed back into, so you can update the
+   master repo on line (or whatever its name is).
+3. branch is a copy of another branch, which could be later merged into the main
+   branch.
+
+
+Add change to local and github. then merge the two changes.
+
+$ git fetch origin
+## updates local with remote changes.
+$ git log origin/master
+$ git diff origin/master master
+$ git status
+## now merge:
+$ git merge master origin/master
+
+## this is same as git fetch and git merge:
+$ git pull origin master
+
+## now push it all up to github:
+$ git push origin master
+
+
+What is the benefit of having a copy of the last known state of the remote stored
+locally?
+
+it allows me to merge in local changes into it and push them to the remote.
+
+
+## Create a different-oil branch, change hte oil and push the branch.
+
+$ git branch different-oil
+$ git checkout different-oil
+
+## make change - add and commit here.
+
+$ git push origin different-oil
+
+## in github - change the base to make a pull request
+
+
+How would you collaborate without using Git or GitHub? What would be easier, and
+what would be harder?
+
+CVS, SVN - both are viable options. There are some advantages to Git, but also
+some disadvantages. I could easily see users not knowing where they were, too many
+clones, merging nightmares. But I like the emphasis on more targeted commits. Nice
+for bugfixes, and enhancements. Might still be too early for me to tell.
