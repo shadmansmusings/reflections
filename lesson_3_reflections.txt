@@ -121,7 +121,7 @@ locally?
 it allows me to merge in local changes into it and push them to the remote.
 
 
-## Create a different-oil branch, change hte oil and push the branch.
+## Create a different-oil branch, change the oil and push the branch.
 
 $ git branch different-oil
 $ git checkout different-oil
@@ -140,3 +140,79 @@ CVS, SVN - both are viable options. There are some advantages to Git, but also
 some disadvantages. I could easily see users not knowing where they were, too many
 clones, merging nightmares. But I like the emphasis on more targeted commits. Nice
 for bugfixes, and enhancements. Might still be too early for me to tell.
+
+
+New merge conflict concept: commands
+
+$ git pull origin master ## to get the merged more-oil brnach in to master, before resolving canola oil change.
+
+## could run git fetch , then git merge origin/master master - but we did git pull instead.
+
+
+## now do the following:
+
+## run sarah_changes_2 - download and run like this:
+
+$ bash sarah_changes_2.sh https://github.com/shadmansmusings/recipes.git
+
+$ git checkout master
+$ git pull origin master
+
+git checkout different-oil
+git merge master different-oil
+
+## resolve the conflict - change to 3/4 cup of canola oil
+
+$ git commit -m "add more oil, but make it canola oil"
+$ git log ## for changes
+
+## push branch different-oil
+## then merge the pull request different-oil into master.
+$ git pull origin master
+
+
+When would you want to make changes in a separate branch rather than directly in
+master? What benefits does each approach have?
+
+You may want to try some code change out before introducing it into the master.
+You may also want different branches for different purposes. A dev, test, stage,
+prod, master - to create a merge stream, code flow process.
+
+
+1. Fork the "create-your-own-adventure" project in Github. (fork button)
+
+2. Grab URL and Clone the project in a terminal.
+$ git clone https://github.com/shadmansmusings/create-your-own-adventure.git
+
+3. Back a branch.
+$ git branch my-adventures
+
+4. Checkout hte new branch.
+$git checkout my-adventures
+
+5. Make some changes.
+
+6. Stage changes.
+$ git add <fname> [<fname>, etc]
+
+7. Commit changes.
+$ git commit -m "message"
+
+8.
+$ git remote add upstream https://github.com/udacity/create-your-own-adventure.git
+
+9. Check out the master branch.
+$ git checkout master
+
+10. bring it up to date with the master.
+$ git pull upstream master
+From https://github.com/udacity/create-your-own-adventure
+ * branch            master     -> FETCH_HEAD
+ * [new branch]      master     -> upstream/master
+Already up-to-date.
+
+11. checkout my adventures
+$ git checkout my-adventures
+
+12. merge with master
+$ git merge master my-adventures
